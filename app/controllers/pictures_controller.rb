@@ -56,6 +56,16 @@ class PicturesController < ApplicationController
   #Part 2 of Update
   #Update Row
   def update_row
+    
+    @photos = Photo.find(params[:id])
+
+    @photos.dob = params[":dob"]
+    @photos.name = params[":name"]
+    @photos.bio = params[":bio"]
+    @photos.image_url = params[":image_url"]
+
+    @photos.save
+    
     render("pic_templates/update_row_template.html.erb")
   end
   
