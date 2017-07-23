@@ -26,7 +26,8 @@ class PicturesController < ApplicationController
   #Part 1 of Read  
   #Index
   def index
-  
+    @photos = Photo.all
+    
     render("pic_templates/index_template.html.erb")
   end
     
@@ -47,6 +48,7 @@ class PicturesController < ApplicationController
   #Part 1 of Update
   #Edit Form
   def edit_form
+    #@director = Director.find(params[:id])
   
     render("pic_templates/edit_form_template.html.erb")  
   end
@@ -61,6 +63,10 @@ class PicturesController < ApplicationController
   #Part 1 of 1 of Delete
   #Delete
   def destroy_row
+    
+    @photos = Photo.find(params[:id])
+    @photos.destroy
+    
     render("pic_templates/destroy_row_template.html.erb")
   end
 
