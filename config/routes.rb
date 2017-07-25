@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
  
+  # Route for bare domain:
+  get("/", { :controller => "pictures", :action => "index" })
+ 
   # CREATE
   get("/photos/new", { :controller => "pictures", :action => "new_form" })
   get("/create_photo", { :controller => "pictures", :action => "create_row" })
