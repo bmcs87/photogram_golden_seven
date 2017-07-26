@@ -1,12 +1,12 @@
 <h1>All Photos</h1>
 
 <a href="/photos/new">
- "Add a new photo"
+  Add a new photo
 </a>
 
-<%=  @list_of_photos.each do |the_photo| %>
-    <div class="thumbnail">
-      <img src="<%= the_photo.source %>">
+<% @list_of_photos.each do |the_photo| %>
+  <div class="thumbnail">
+    <img src="<%= the_photo.source %>">
 
     <div class="caption">
       <a href="/photos/<%= the_photo.id %>" class="btn btn-default btn-block">
